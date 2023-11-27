@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ログイン画面</title>
+</head>
+<body>
+<form th:action="@{/miclogin}" method="POST">
+<h2>ログイン</h2>
+ログインID：<input type="text" name="micloginid"> <br>
+パスワード：<input type="text" name="micpw"><br>
+<input type="submit" value="送信">
+<div class="col-4">
+<p th:text="${micloginid}"></p>
+<p th:text="${micpw}"></p>
+<p th:text="${false1}"></p>
+</div>
+</form>
+</body>
+</html>
