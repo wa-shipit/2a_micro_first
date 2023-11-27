@@ -7,7 +7,24 @@
 </head>
 
 <body>
-	<h1>削除ページ</h1>
+		<form th:action="@{micdel}" method="POST">
+			
+			<h1>削除</h1>
+			
+			<table>
+				<tr>
+					<td>月</td>
+					<td><input type="text" name="month"/></td>
+				</tr>
+				<tr>
+					<td>日</td>
+					<td><input type="text" name="day"/></td>		
+				</tr>
+			</table>
+			
+			<input type="submit" value="削除">
+			
+		</form>
 </body>
 
 </html>
