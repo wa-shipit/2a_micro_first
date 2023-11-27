@@ -6,8 +6,29 @@
 	<title>Insert title here</title>
 </head>
 
-<body>
-	<h1>編集ページ</h1>
+<body>	
+		<form th:action="@{micedit}" method="POST">
+			
+			<h1>編集</h1>
+			
+			<table>
+				<tr>
+					<td>月</td>
+					<td><input type="text" name="month"/></td>
+				</tr>
+				<tr>
+					<td>日</td>
+					<td><input type="text" name="day"/></td>		
+				</tr>
+				<tr>
+					<td>予定</td>
+					<td><input type="text" name="todo"/></td>		
+				</tr>
+			</table>
+			
+			<input type="submit" value="編集">
+			
+		</form>
 </body>
 
 </html>

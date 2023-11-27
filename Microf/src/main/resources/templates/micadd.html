@@ -7,7 +7,30 @@
 </head>
 
 <body>
-	<h1>追加ページ</h1>
+		<form th:action="@{/micadd}" method="POST">
+			
+			<h1>新規登録</h1>
+			
+			<table>
+				<tr>
+					<td>月</td>
+					<td><input type="text" name="month"/></td>
+				</tr>
+				<tr>
+					<td>日</td>
+					<td><input type="text" name="day"/></td>		
+				</tr>
+				<tr>
+					<td>予定</td>
+					<td><input type="text" name="todo"/></td>		
+				</tr>
+			</table>
+			
+			<input type="submit" value="登録">
+			
+			<p th:text="${moji}"></p>
+			
+		</form>
 </body>
 
 </html>
