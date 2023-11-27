@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Todo更新フォーム</title>
+</head>
+<body>
+    <h2>Todoを更新する！</h2>
+    <form th:action="@{/micedit}" method="POST" enctype="multipart/form-data">
+        更新対象のユーザID(数値)：<input type="number" name="user_id"> <br>
+        更新後の月：<input type="text" name="month"> <br>
+        更新後の日：<input type="text" name="day"> <br>
+        更新後のTodo：<input type="text" name="todo"> <br>
+        <input type="submit" value="更新">
+    </form>
+</body>
+</html>

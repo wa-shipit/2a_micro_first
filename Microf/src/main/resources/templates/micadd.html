@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Todo登録</title>
+</head>
+<body>
+    <h2>Todo登録</h2>
+    <form th:action="@{/micadd}" method="POST">
+        ユーザーID：<input type="text" name="user_id"><br>
+        月：<input type="text" name="month"><br>
+        日：<input type="text" name="day"><br>
+        Todo：<input type="text" name="todo"><br>
+        <input type="submit" value="登録">
+    </form>
+    <hr>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ページのタイトル</title>
+    <link rel="stylesheet" href="css/michome.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="ToDo">
+        <p>ToDoリスト</p>
+        <!-- Thymeleafのブロックタグを正しく使う -->
+        <th:block th:each="result : ${selectResult}">
+            <p th:text="${result.month} + '月 ' + ${result.day} + '日の予定'"></p>
+            <p th:text="${result.todo}"></p>
+        </th:block>
+    </div>
+
+    <div class="List">
+        <p>リンク</p>
+        <p><a href="http://localhost:8080/micadd">新規登録</a>へ</p>
+       <p><a href="http://localhost:8080/micedit">更新</a>へ</p>
+      <p><a href="http://localhost:8080/micdel">削除</a>へ</p>
+ 
+    </div>
+</div>
+
+</body>
+</html>
