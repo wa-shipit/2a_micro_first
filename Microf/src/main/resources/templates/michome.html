@@ -1,0 +1,46 @@
+<!-- michome.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>ToDoList</title>
+    <meta charset="UTF-8">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@700&family=Dela+Gothic+One&family=DotGothic16&family=Mochiy+Pop+One&family=Mochiy+Pop+P+One&family=Noto+Sans+JP:wght@800&family=Zen+Maru+Gothic:wght@300;700&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+    <div class="row">
+        <!-- 左2/3 -->
+        <div class="col-8">
+            <!-- ToDoList -->
+            <h1>ToDoList</h1>
+            <ul>
+                <li th:each="toDo : ${toDoList}">
+                    <p th:text="${toDo.todo}"></p>
+                    <p th:text="${toDo.userId}"></p>
+                    <p th:text="${toDo.month}"></p>
+                    <p th:text="${toDo.day}"></p>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- 右1/3 -->
+        <div class="col-4">
+            <!-- 画面遷移のURLを表示 -->
+            <div>
+                右ブロック<br>
+                <a th:href="@{/micadd}">新規登録</a><br>
+                <a th:href="@{/micedit}">編集</a><br>
+                <a th:href="@{/micdel}">削除</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
