@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+		<form th:action="@{/micdel}" method="post">
+		<p>月<p>
+		<input type="text" name="micmonth">
+		<p>日</p>
+		<input type="text" name="micday">
+		<p>予定</p>
+		<input type="text" name="todo">
+		<p id="errorMessage" style="color: black;"></p>
+
+		<input type="submit" value="そうしーん">
+		</form>
+</body>
+</body>
+</html>

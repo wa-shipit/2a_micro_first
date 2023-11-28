@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	
+	    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+	<form th:action="@{/micuser}" method="post">
+		<p>ユーザID</p>
+		<input type="text" id="micloginidInput" oninput="checkInputLength('micloginidInput')" name="micid">
+		<p>パスワード</p>
+		<input type="password" id="micpwInput" oninput="checkInputLength('micpwInput')" name="micpw">
+		<p id="errorMessage" style="color: black;"></p>
+
+		<script>
+			function checkInputLength(inputId) {
+				var inputBox = document.getElementById(inputId);
+				var errorMessage = document.getElementById("errorMessage");
+				var maxLength = 10; // ここに設定した文字列の最大長を指定します
+
+				if (inputBox.value.length > maxLength) {
+					errorMessage.textContent = "入力文字列が制限を超えています。";
+					inputBox.value = inputBox.value.substring(0, maxLength); // 最大長までの文字列に切り詰める
+				} else {
+					errorMessage.textContent = "";
+				}
+			}
+		</script>
+		<input type="submit" value="完了">
+	</form>
+</body>
+
+</html>
