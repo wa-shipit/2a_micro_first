@@ -42,7 +42,6 @@ public class MicLoginController {
 
 			model.addAttribute("era", "ログインに失敗しました");
 			return "miclogin";
-
 		}
 	}
 }
