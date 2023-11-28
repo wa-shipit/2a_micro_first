@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@700&family=Dela+Gothic+One&family=DotGothic16&family=Mochiy+Pop+One&family=Mochiy+Pop+P+One&family=Noto+Sans+JP:wght@800&family=Zen+Maru+Gothic:wght@300;700&display=swap"
+		rel="stylesheet">
+	<title>Insert title here</title>
+	<script>
+		const changeId = (e) => {
+			let str = String(e.target.value);
+			if(str.length > 16) {
+				document.getElementById('messageId').innerText = "文字数が多すぎます";
+			} else {
+				document.getElementById('messageId').innerText = "";
+			}
+		}
+		
+		const changePw = (e) => {
+			let str = String(e.target.value);
+			if(str.length > 16) {
+				document.getElementById('messagePw').innerText = "文字数が多すぎます";
+			} else {
+				document.getElementById('messagePw').innerText = "";
+			}
+		}
+	</script>
+</head>
+
+
+
+<body>
+	<div class="row">
+		<div class="col-4">
+			<form th:action="@{/miclogin}" method="POST">
+
+				<div class="form-group">
+					<th:block th:if="${loginerror == 1}">
+						<p>ログインに失敗しました</p>
+					</th:block>
+					<label for="micloginid">ID</label><br>
+					<input type="text" name="micloginid" onchange="changeId(event);"><br>
+					<p id="messageId"></p>
+
+					<label for="micpw">パスワード</label><br>
+					<input type="text" name="micpw" onchange="changePw(event);"><br>
+					<p id="messagePw"></p>
+					<button type="submit" class="btn btn-primary">ログイン</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+</body>
+
+</html>
