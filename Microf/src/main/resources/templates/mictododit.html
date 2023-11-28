@@ -1,0 +1,23 @@
+<!-- mictododit.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- ヘッドコンテンツを追加 -->
+</head>
+<body>
+    <h2>Todoを編集</h2>
+    <form th:action="@{/micedit}" method="post">
+        <!-- 編集する既存データで事前に埋められたフォームフィールドを追加 -->
+        <label for="month">月:</label>
+        <input type="text" id="month" name="month"/><br/>
+
+        <label for="day">日:</label>
+        <input type="text" id="day" name="day"/><br/>
+
+        <label for="todo">予定:</label>
+        <input type="text" id="todo" name="todo"/><br/>
+
+        <button type="submit">編集完了</button>
+    </form>
+</body>
+</html>
