@@ -14,27 +14,24 @@
 
 <body>
 	<div class="row">
-		<div class="col-4">左ブロック</div>
+		<div class="col-4">新規登録画面</div>
 		<div class="col-4">
-			<h1 style="font-family: 'DotGothic16', sans-serif;">新規登録画面</h1>
+			
 			
 
 			<!--ここ大事！！！---->
-			<form th:action="@{/example}" method="POST">
-				<div class="form-group">
-					<label for="example1">月</label>
-					<input type="text" name="example1"><br>
-
-					<label for="example2">日</label>
-					<input type="text" name="example2"><br>
-					
-					<label for="example2">予定</label>
-					<input type="text" name="example2"><br>
-
-					<button type="submit" class="btn btn-primary">送信</button>
-					</div>
-			</form>
-			
+			<form th:action="@{/micadd}" method="post">
+        <label for="month">月:</label>
+        <input type="number" name="month" required>
+        <br>
+        <label for="day">日:</label>
+        <input type="number" name="day" required>
+        <br>
+        <label for="schedule">予定:</label>
+        <input type="text" name="schedule" required>
+        <br>
+        <input type="submit" value="登録">
+    </form>
 			<!---->
 		</div>
 		
