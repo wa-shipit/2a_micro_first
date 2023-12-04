@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>変更したい内容を入力してください。</h2>
+	<form th:action="@{/micedit}" method="POST" enctype="multipart/form-data">
+	<input type="hidden" th:value="${todo.id}" name="id">
+	<table>
+	<tr>
+		<th>ユーザー名</th>
+		<td><p th:text="${todo.user_id}"></td>
+	</tr>	
+	<tr>
+		<th>月</th>
+		<td><input type="text" th:placeholder="${todo.month}" th:value="${todo.month}" name="month"></td>
+	</tr>	
+	<tr>
+		<th>日</th>
+		<td><input type="text" th:placeholder="${todo.day}" th:value="${todo.day}" name="day"></td>
+	</tr>	
+	<tr>
+		<th>内容</th>
+		<td><input type="text" th:placeholder="${todo.todo}" th:value="${todo.todo}" name="todo"></td>
+	</tr>	
+	</table>
+	<input type="submit" value="変更する">
+	</form>
+	<br>
+	<br>
+	<br>
+	<form th:action="@{/michome}" method="GET" enctype="multipart/form-data">
+	<input type="submit" value="戻る">
+	</form>
+</body>
+</html>

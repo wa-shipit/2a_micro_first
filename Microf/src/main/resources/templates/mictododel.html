@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>削除したいTodoを選んでください</h2>
+<table>
+	<tr>
+		<th>ユーザーID</th>
+		<th>日付け</th>
+		<th>内容</th>
+	</tr>
+	<th:block th:each="result : ${list}">
+	<tr>
+	<td th:text="${result.user_id}"></td>
+	<td th:text="${result.month + '/' + result.day}"></td>
+	<td th:text="${result.todo}"></td>
+	<td>
+		<form th:action="@{/micdel}" method="POST" enctype="multipart/form-data">
+		<input type="hidden" name="id" th:value="${result.id}">
+		<input type="submit" value="削除">
+		</form>
+	</td>
+	</tr>
+	</th:block>
+</table>
+<form th:action="@{/michome}" method="GET" enctype="multipart/form-data">
+	<input type="submit" value="戻る">
+	</form>
+</body>
+</html>
