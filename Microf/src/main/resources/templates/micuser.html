@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<form th:action="@{/micuser}" method="post">
+	<h1>ユーザ登録</h1>
+	
+		<p>ユーザID</p>
+		
+		<input type="text" id="registrationInput" name="parameter1" required>
+		<p>パスワード</p>
+		
+		<input type="text" id="registrationInput" name="parameter2" required>
+		<p id="errorMessage" style="color: black;"></p>
+
+		<script>
+			function checkInputLength(inputId) {
+				var inputBox = document.getElementById(inputId);
+				var errorMessage = document.getElementById("errorMessage");
+				var maxLength = 16; // ここに設定した文字列の最大長を指定します
+
+				if (inputBox.value.length > maxLength) {
+					errorMessage.textContent = "入力文字列が制限を超えています。";
+					inputBox.value = inputBox.value.substring(0, maxLength); // 最大長までの文字列に切り詰める
+				} else {
+					errorMessage.textContent = "";
+				}
+			}
+		</script>
+		
+		
+		 <form id="myForm" action="登録処理のURL" method="POST" onsubmit="return validateForm()">
+        
+        <input type="submit" value="登録">
+    </form>
+
+    <script>
+        function validateForm() {
+            // フォームの入力値を取得
+            var registrationValue = document.getElementById("registrationInput").value;
+
+            // 入力値が空であればアラートを表示し、ページ遷移を阻止
+            if (registrationValue.trim() === "") {
+                alert("登録欄が空です。何か入力してください。");
+                return false; // ページ遷移を阻止
+            }
+
+            // フォームが正常であればtrueを返してページ遷移を許可
+            return true;
+        }
+    </script>
+
+</body>
+</html>
+		
+		
+	
+	
+	</form>
+
+
+
+
+</body>
+</html>
