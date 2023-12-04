@@ -1,0 +1,31 @@
+<!-- mictodoin.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- ヘッドコンテンツを追加 -->
+</head>
+
+<body>
+	<h2>新規登録</h2>
+	<form th:action="@{/micadd}" method="post">
+		<label for="month">月:</label>
+		<input type="text" id="month" name="month" required /><br />
+		<label for="month">日:</label>
+		<input type="text" id="day" name="day" required /><br />
+		<label for="month">予定:</label>
+		<input type="text" id="todo" name="todo" required /><br />
+
+		<button type="submit">登録</button>
+		<!-- 既存のコンテンツ -->
+
+		<div th:if="${errorMessage}" class="error-message">
+			<p th:text="${errorMessage}"></p>
+		</div>
+
+		<!-- 既存のコンテンツ -->
+
+	</form>
+</body>
+
+</html>
