@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <title>ユーザー登録</title>
+    
+</head>
+<script>
+	const change = (e) => {
+		let value = String(e.target.value);
+		
+		if(value.length >= 10){
+			document.getElementById('message').innerText = '文字数が多すぎます';
+		}
+	}
+</script>
+<body>
+    <h2 class="heading">ユーザー登録</h2>
+    <form method="post" th:action="@{/micuser}" th:object="${User}">
+        <label for="micloginid">ユーザーID</label>
+        <input type="text" id="micloginid" name="micloginid" required onchange="change(event)"><br>
+        <label for="micpw">パスワード</label>
+        <input type="password" id="micpw" name="micpw" required onchange="change(event)"><br>
+        <p id="message"></p>
+        <button type="submit">登録</button>
+    </form>
+</body>
+</html>
