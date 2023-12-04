@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class MicLoginController {
 
@@ -19,9 +21,11 @@ public class MicLoginController {
 	}
 	
 	@RequestMapping(path = "/miclogin", method = RequestMethod.POST)
-	public String loginPost(Model model,String micloginid,String micpw) {
+	public String loginPost(HttpSession session,Model model,String micloginid,String micpw) {
 		int count = jdbcTemplate.queryForObject("SELECT COUNT(*) FROM miclogin WHERE loginid = ? AND password = ?", Integer.class, micloginid,micpw);
 		if(count == 1) {
+			session.setAttribute("loginparam1", micloginid);
+			session.setAttribute("loginparam2", micpw);
 			return "redirect:/michome";
 		} else {
 			model.addAttribute("loginerror", 1);

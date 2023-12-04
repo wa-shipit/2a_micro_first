@@ -19,6 +19,7 @@
 		
 		<div class="col-4">
 			<h1 style="font-family: 'DotGothic16', sans-serif;text-align: right;">【TODOLIST】</h1>
+			<p th:text="${session.loginparam1}" style="text-align: right;"></p>
 			<th:block th:each="result : ${resultList}">
 			<h2 th:text="${result.month+'月'+result.day+'日の予定'}" style="text-align: right;"></h2>
 			<p th:text="${'・'+result.todo}" style="text-align: right;"></p>
