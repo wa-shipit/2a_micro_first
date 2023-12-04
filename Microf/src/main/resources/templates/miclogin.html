@@ -1,42 +1,5 @@
 <!DOCTYPE html>
 <<<<<<< HEAD
-<html>
-
-<head>
-	<link rel="stylesheet" type="text/css" href="/css/kadai.css" />
-	<meta charset="UTF-8">
-	<title>Insert title here</title>
-</head>
-
-<body>
-	<form th:action="@{/micuser}" method="post">
-		<p>ユーザID</p>
-		<input type="text" id="micloginidInput" oninput="checkInputLength('micloginidInput')" name="parameter1">
-		<p>パスワード</p>
-		<input type="password" id="micpwInput" oninput="checkInputLength('micpwInput')" name="parameter2">
-		<p id="errorMessage" style="color: black;"></p>
-
-		<script>
-			function checkInputLength(inputId) {
-				var inputBox = document.getElementById(inputId);
-				var errorMessage = document.getElementById("errorMessage");
-				var maxLength = 10; 
-
-				if (inputBox.value.length > maxLength) {
-					errorMessage.textContent = "16文字までにしてね";
-					inputBox.value = inputBox.value.substring(0, maxLength);
-				} else {
-					errorMessage.textContent = "";
-				}
-			}
-		</script>
-		<input type="submit" value="完了">
-	</form>
-
-</body>
-
-</html>
-=======
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -76,4 +39,45 @@
 </body>
 
 </html>
+<<<<<<< HEAD
 >>>>>>> branch 'master' of https://github.com/wa-shipit/2a_micro_first.git
+=======
+=======
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="/css/kadai.css" />
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<form th:action="@{/micuser}" method="post">
+		<p>ユーザID</p>
+		<input type="text" id="micloginidInput" oninput="checkInputLength('micloginidInput')" name="parameter1">
+		<p>パスワード</p>
+		<input type="password" id="micpwInput" oninput="checkInputLength('micpwInput')" name="parameter2">
+		<p id="errorMessage" style="color: black;"></p>
+
+		<script>
+			function checkInputLength(inputId) {
+				var inputBox = document.getElementById(inputId);
+				var errorMessage = document.getElementById("errorMessage");
+				var maxLength = 10; 
+
+				if (inputBox.value.length > maxLength) {
+					errorMessage.textContent = "16文字までにしてね";
+					inputBox.value = inputBox.value.substring(0, maxLength);
+				} else {
+					errorMessage.textContent = "";
+				}
+			}
+		</script>
+		<input type="submit" value="完了">
+	</form>
+
+</body>
+
+</html>
+>>>>>>> branch 'tanaka' of https://github.com/wa-shipit/2a_micro_first.git
+>>>>>>> branch 'yufu' of https://github.com/wa-shipit/2a_micro_first.git
