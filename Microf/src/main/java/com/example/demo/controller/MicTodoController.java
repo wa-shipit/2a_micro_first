@@ -47,29 +47,28 @@ public class MicTodoController {
 	}
 
 	@RequestMapping(path = "/micedit", method = RequestMethod.POST)
-	public String micedit(String user_id, String month, String day, String todo) {
+	public String micedit(String month, String day, String todo) {
 
 		//if ((0 < month && month <= 12) || (0 < day && day <= 31)) {
 		//	return "mictodoedit";
 		//}
 
 		//DBに画面から入力されたデータを更新する。
-		jdbcTemplate.update("UPDATE todo (month,day,todo values(?,?,?) where month = ? and day = ?;",
-				month, day, todo, month, day);
+		jdbcTemplate.update("update todo todo set todo = ? where month = ? and day = ?;", todo, month, day);
 
 		return "mictodoedit";
 
 	}
 
 	@RequestMapping(path = "/micdel", method = RequestMethod.POST)
-	public String micdel(String user_id, String month, String day, String todo) {
+	public String micdel(String month, String day) {
 
 		//if ((0 < month && month <= 12) || (0 < day && day <= 31)) {
 		//	return "mictododel";
 		//}
 
 		//DBに画面から入力されたデータを削除する。
-		jdbcTemplate.update("delete from todo where month = ? AND day = ?", month, day);
+		jdbcTemplate.update("delete from todo where month = ? and day = ?", month, day);
 
 		return "mictododel";
 
