@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>登録</title>
+	
+</head>
+<body>
+
+	<h3>登録</h3>
+		<form th:action="@{/micuser}" method="POST">
+		ID<input type="text" name="loginid">
+		<br>
+		PW<input type="text" name="password">
+		<input type="submit" value="登録する">
+	</form>
+	<p th:text="${loginid}"></p>
+	<p th:text="${password}"></p>
+	<p th:text="${msg}"></p>
+</body>
+</html>
