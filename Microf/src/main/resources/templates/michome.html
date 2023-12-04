@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	
+	
+	
+</head>
+
+<body>
+	<div class="row">
+		
+		<div class="col-8">
+			<center>
+			<h1>【TODOLIST】</h1>
+			<h1><th:block th:each="result : ${selectResult}">
+			<p th:text="${result.month}+月+${result.day}+日の予定"></p>
+			
+			<p th:text="・+${result.todo}"></p>
+			</th:block>
+			</h1>
+			</center>
+		</div>
+		<div class="col-4">
+			<h2>
+			<a th:href="@{/micadd}">新規登録</a></p>
+			
+			<a th:href="@{/micedit}">編集</a></p>
+			
+			<a th:href="@{/micdel}">削除</a></p>
+			<h2>
+			
+		</h2>
+	</div>
+</body>
+
+</html>
