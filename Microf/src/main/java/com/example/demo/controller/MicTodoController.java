@@ -13,8 +13,6 @@ public class MicTodoController {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
-	int firstId = 999999;
-
 	@RequestMapping(path = "/micadd", method = RequestMethod.GET)
 	public String micaddGet() {
 		return "mictodoadd";
