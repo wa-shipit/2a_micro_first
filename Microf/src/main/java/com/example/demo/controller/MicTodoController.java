@@ -50,10 +50,10 @@ public class MicTodoController {
 	}
 
 	@RequestMapping(path = "/micdel", method = RequestMethod.POST)
-	public String tenthPostDelete(String day) throws IOException {
+	public String tenthPostDelete(String month, String day) throws IOException {
 
 		//データ削除SQL実行
-		jdbcTemplate.update("DELETE FROM todo WHERE day = ?", day);
+		jdbcTemplate.update("DELETE FROM todo WHERE day = ?,month = ?", month, day);
 
 		return "redirect:/michome";
 	}

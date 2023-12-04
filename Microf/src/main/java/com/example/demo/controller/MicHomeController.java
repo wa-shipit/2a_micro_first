@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class MicHomeController {
 
@@ -18,18 +20,15 @@ public class MicHomeController {
 
 	//コピペ用サンプル(ページ表示用メソッド)
 	@RequestMapping(path = "/michome", method = RequestMethod.GET)
-	public String copGet(Model model) {
+	public String copGet(Model model, HttpSession session) {
 		//DBに繋ぐならこんな感じ(JdbcTemplate)
 		List<Map<String, Object>> resultList = jdbcTemplate.queryForList("select * from todo");
 
+		String loginid = (String) session.getAttribute("loginid");
+
+		model.addAttribute("loginid", loginid);
 		model.addAttribute("selectResult", resultList);
 		return "michome";
 	}
 
-	//コピペ用サンプル（画面から何か入力をした時用）
-	@RequestMapping(path = "/michome", method = RequestMethod.POST)
-	public String copPost() {
-
-		return "michome";
-	}
 }
