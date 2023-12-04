@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.example.demo.entity.Todo;
+import com.example.demo.entity.ToDo;
 import com.example.demo.service.MicAddService;
 import com.example.demo.service.MicDelService;
 import com.example.demo.service.MicEditService;
@@ -39,7 +39,7 @@ public class MicTodoController {
 	public String editGet(Model model) {
 		/*全件取得して表示する。*/
 		UtilityService utilityService = new UtilityService();
-		List<Todo> TodoList = utilityService.getAllTodoList(jdbcTemplate);
+		List<ToDo> TodoList = utilityService.getAllTodoList(jdbcTemplate);
 		model.addAttribute("list", TodoList);
 		return "mictodoedit";
 	}
@@ -54,7 +54,7 @@ public class MicTodoController {
 	@RequestMapping(path = "/miceditdetail", method = RequestMethod.GET)
 	public String editDetail(String id, Model model) {
 		UtilityService utilityService = new UtilityService();
-		Todo todo = utilityService.getOneTodo(id, jdbcTemplate);
+		ToDo todo = utilityService.getOneTodo(id, jdbcTemplate);
 		model.addAttribute("todo", todo);
 		return "miceditdetail";
 	}
@@ -64,7 +64,7 @@ public class MicTodoController {
 	public String delGet(Model model) {
 		/*全件取得して表示する。*/
 		UtilityService utilityService = new UtilityService();
-		List<Todo> TodoList = utilityService.getAllTodoList(jdbcTemplate);
+		List<ToDo> TodoList = utilityService.getAllTodoList(jdbcTemplate);
 		model.addAttribute("list", TodoList);
 		return "mictododel";
 	}

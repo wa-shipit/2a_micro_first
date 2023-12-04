@@ -12,14 +12,26 @@ public class ToDo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	Long id;
 
-	private String userId;
-	private String month;
-	private String day;
-	private String todo;
+	String userId;
+	String month;
+	String day;
+	String todo;
 
 	// Getter and Setter methods
+
+	public ToDo() {
+	}
+
+	public ToDo(Long i, String userId, String month, String day, String todo) {
+		super();
+		this.id = i;
+		this.userId = userId;
+		this.month = month;
+		this.day = day;
+		this.todo = todo;
+	}
 
 	public Long getId() {
 		return id;

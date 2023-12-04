@@ -26,19 +26,19 @@ public class MicHomeController {
 	}
 
 	// 新規登録リンクをクリックした時の遷移先
-	@RequestMapping(path = "/micadd", method = RequestMethod.GET)
+	@RequestMapping(path = "/tomicadd", method = RequestMethod.GET)
 	public String redirectToMicAdd() {
 		return "redirect:/micadd";
 	}
 
 	// 編集リンクをクリックした時の遷移先
-	@RequestMapping(path = "/micedit", method = RequestMethod.GET)
+	@RequestMapping(path = "/tomicedit", method = RequestMethod.GET)
 	public String redirectToMicEdit() {
 		return "redirect:/micedit";
 	}
 
 	// 削除リンクをクリックした時の遷移先
-	@RequestMapping(path = "/micdel", method = RequestMethod.GET)
+	@RequestMapping(path = "/tomicdel", method = RequestMethod.GET)
 	public String redirectToMicDel() {
 		return "redirect:/micdel";
 	}
