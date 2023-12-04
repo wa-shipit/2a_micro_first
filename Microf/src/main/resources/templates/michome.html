@@ -15,7 +15,9 @@
 		
 		<div class="col-9">
 			<center>
-			<h1>【TODOLIST】</h1>
+						<h1>【TODOLIST】</h1>
+			<p th:text="${session.loginparam1}"></p>
+
 			<h1><th:block th:each="result : ${Result}">
 			<p th:text="${result.month}+月+${result.day}+日の予定"></p>
 			
