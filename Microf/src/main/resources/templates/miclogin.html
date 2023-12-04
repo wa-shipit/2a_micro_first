@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>ログイン画面</title>
+    <script>
+		const change = (e) => {
+			let value = String(e.target.value);
+			
+			if(value.length >= 16){
+				document.getElementById('message').innerText = '文字数多いです';
+			}else{
+				document.getElementById('message').innerText = '';
+			}
+		}
+	</script>
+</head>
+<body>
+    <div class="login-controller">
+        <h2>ログイン</h2>
+        <form th:action="@{/miclogin}" method="post">
+                <label for="micloginid">ID:</label>
+                <input type="text" id="micloginid" name="micloginid" required onchange="change(event)">
+                <label for="micpw">パスワード:</label>
+                <input type="password" id="micpw" name="micpw" required onchange="change(event)">
+                <p id="message"></p>
+                <button type="submit">ログインする</button>
+            </div>
+        </form>
+    </div>
+    <div>
+		<p th:text="${lenError}"></p>
+	</div>
+</body>
+</html>
