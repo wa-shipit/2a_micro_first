@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mic Home</title>
+</head>
+<body>
+    <h1>MicHome</h1>
+    
+    <table>
+        <thead>
+            <tr>
+               
+            
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="todo : ${resultList}">
+                <td th:text="${todo.user_id}"></td>
+                <td th:text="${todo.todo}"></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <a th:href="@{/micadd}">新規</a>
+    <a th:href="@{/micedit}">編集</a>
+    <a th:href="@{/micdel}">削除</a>
+</body>
+</html>
