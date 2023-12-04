@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <style>
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+        }
+        .action-links {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .action-links a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Todoリスト表示 -->
+<div>
+    <h1>TODOLIST</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>月</th>
+                <th>日</th>
+                <th>User ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="todo : ${todoList}">
+                <td th:text="${todo.month}" style="font-size: 18px;"></td>
+                <td th:text="${todo.day}" style="font-size: 18px;"></td>
+                <td th:text="${todo.user_id}" style="font-size: 18px;"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 新規登録、編集、削除のアクションリンク -->
+<div class="action-links">
+    <a href="/micadd">新規登録</a>
+    <a href="/micedit">編集</a>
+    <a href="/micdel">削除</a>
+</div>
+
+</body>
+</html>
