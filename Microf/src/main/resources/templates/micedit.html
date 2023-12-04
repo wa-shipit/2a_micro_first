@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicTodo - 編集</title>
+</head>
+<body>
+    <h1>MicTodo - 編集</h1>
+    <form action="/micedit" method="post">
+        <label for="month">月:</label>
+        <input type="text" id="month" name="month" required>
+        <br>
+        <label for="day">日:</label>
+        <input type="text" id="day" name="day" required>
+        <br>
+        <label for="todo">予定:</label>
+        <input type="text" id="todo" name="todo" required>
+        <br>
+        <input type="submit" value="編集">
+    </form>
+</body>
+</html>

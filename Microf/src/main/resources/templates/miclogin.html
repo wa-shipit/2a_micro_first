@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        function checkInputLength() {
+            var micloginid = document.getElementById('micloginid').value;
+            var micpw = document.getElementById('micpw').value;
+
+            if (micloginid.length > 16 || micpw.length > 16) {
+                alert('文字数が多すぎます');
+                return false;
+            }
+            return true;
+        }
+        /*]]>*/
+    </script>
+</head>
+<body>
+    <form action="/miclogin" method="post" onsubmit="return checkInputLength();">
+        <label for="micloginid">ID:</label>
+        <input type="text" id="micloginid" name="micloginid" required>
+        <br>
+        <label for="micpw">Password:</label>
+        <input type="password" id="micpw" name="micpw"  required>
+        <br>
+        <button type="submit">Login</button>
+        
+        <p th:if="${errorMessage}" th:text="${errorMessage}"></p>
+    </form>
+</body>
+</html>
