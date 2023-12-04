@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>MicUserEntry</title>
+
+</head>
+<body>
+	<p>ユーザID,パスワードともに文字数１０文字まで入力が可能です。</p>
+    <form action="/micuser" method="post">
+        <label for="userId">ユーザID　:</label>
+        <input type="text" id="userId" name="userId" maxlength="10" required>
+        <br>
+        <label for="password">パスワード:</label>
+        <input type="password" id="password" name="password" maxlength="10" required>
+        <button type="button" class="show-password" onclick="showdownPassword()">表示</button>
+        <br>
+        <input type="submit" value="登録">
+    </form>
+
+    <script>
+        function showdownPassword() {
+            var passwordInput = document.getElementById("password");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>
